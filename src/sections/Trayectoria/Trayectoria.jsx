@@ -3,24 +3,31 @@ import "./Trayectoria.css";
 const trayectoriaData = [
   {
     id: 1,
-    year: "AÑO",
-    title: "Inicio en programación",
+    year: "2022 / 2023",
+    title: "Primeros pasos",
     description:
-      "Comencé a estudiar programación y desarrollo web, incorporando los primeros conceptos y herramientas.",
+      "Tuve mi primer acercamiento a la programación mediante PSeInt, aprendiendo lógica, algoritmos y estructuras de programación a través de pseudocódigo.",
   },
   {
     id: 2,
-    year: "AÑO",
-    title: "Desarrollo frontend",
+    year: "2024",
+    title: "Programación con código",
     description:
-      "Empecé a trabajar con HTML, CSS y JavaScript, desarrollando mis primeros proyectos.",
+      "Comencé a trabajar directamente con lenguajes de programación, desarrollando aplicaciones y familiarizándome con distintas herramientas de desarrollo.",
   },
   {
     id: 3,
-    year: "Actualidad",
+    year: "Actualidad (2026)",
+    title: "Desarrollo web",
+    description:
+      "Me enfoqué en el desarrollo front-end, aprendiendo a crear interfaces web y trabajando con tecnologías como HTML, CSS y JavaScript.",
+  },
+  {
+    id: 4,
+    year: "Actualidad (2026)",
     title: "Proyectos personales",
     description:
-      "Continúo aprendiendo y creando proyectos para poner en práctica mis conocimientos.",
+      "Continúo aprendiendo y desarrollando proyectos personales para poner en práctica mis conocimientos y seguir incorporando nuevas tecnologías.",
   },
 ];
 
