@@ -1,0 +1,155 @@
+
+.footer {
+  background-color: var(--ink);
+  color: var(--ivory);
+}
+
+.footer-container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 58px 36px 22px;
+}
+
+
+/* Contenido principal */
+
+.footer-main {
+  text-align: center;
+}
+
+.footer-marca {
+  display: block;
+
+  width: 28px;
+  height: 2px;
+
+  margin: 0 auto 18px;
+
+  background-color: var(--ochre);
+}
+
+.footer-titulo {
+  margin: 0 0 10px;
+
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+
+  color: var(--ivory);
+}
+
+.footer-descripcion {
+  max-width: 480px;
+
+  margin: 0 auto 30px;
+
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.6;
+
+  color: var(--ink-soft);
+}
+
+
+/* Redes */
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 30px;
+}
+
+.footer-social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #DCE0E2;
+  text-decoration: none;
+
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-social-link svg {
+  width: 22px;
+  height: 22px;
+
+  transition: transform 0.2s ease;
+}
+
+.footer-social-link:hover {
+  color: var(--ochre);
+}
+
+.footer-social-link:hover svg {
+  transform: translateY(-2px);
+}
+
+
+/* Separador */
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 50px;
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(220, 224, 226, 0.12);
+}
+
+.footer-copy,
+.footer-text {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+}
+
+.footer-copy {
+  color: #DCE0E2;
+}
+
+.footer-text {
+  color: var(--ink-soft);
+}
+
+
+/* Responsive */
+
+@media (max-width: 700px) {
+
+  .footer-container {
+    padding: 48px 24px 20px;
+  }
+
+  .footer-titulo {
+    font-size: 1.9rem;
+  }
+
+  .footer-social {
+    gap: 22px;
+  }
+
+  .footer-social-link svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+}

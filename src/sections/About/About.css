@@ -1,0 +1,35 @@
+/* CSS LOCAL */
+
+.about {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 40px 36px;
+}
+
+.about-marca {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--ochre);
+  margin-bottom: 12px;
+}
+
+.about h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem; /* = 24px */
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.about-text p {
+  font-family: var(--font-body);
+  font-size: 0.95rem; /* ≈ 17px */
+  color: #3A3D40;
+  max-width: none; /* el texto ocupa todo el ancho */
+  margin-bottom: 12px;
+
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
