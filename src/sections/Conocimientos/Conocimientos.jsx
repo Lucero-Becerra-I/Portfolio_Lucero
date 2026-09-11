@@ -4,18 +4,23 @@ function Conocimientos() {
   const conocimientos = [
     {
       id: 1,
-      categoria: "Herramientas que uso",
-      habilidades: ["HTML", "CSS", "JavaScript", "React", "Git", "Tailwind CSS"],
+      categoria: "Tecnologías",
+      habilidades: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Tailwind CSS", "Python"],
     },
     {
       id: 2,
-      categoria: "Conceptos y tecnologías",
-      habilidades: ["GitHub", "Responsive Design", "APIs"],
+      categoria: "Herramientas",
+      habilidades: ["Git", "GitHub"],
     },
     {
       id: 3,
+      categoria: "Conceptos",
+      habilidades: ["Responsive Design"],
+    },
+    {
+      id: 4,
       categoria: "En proceso de aprendizaje",
-      habilidades: ["TypeScript", "Node.js", "Testing", "Accesibilidad web"],
+      habilidades: ["Node.js", "Testing", "Accesibilidad web"],
     },
   ];
 
