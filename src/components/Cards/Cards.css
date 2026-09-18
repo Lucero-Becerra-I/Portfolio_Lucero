@@ -1,0 +1,47 @@
+.card {
+  width: 300px;
+  height: 340px;
+
+  padding: var(--space-lg);
+
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* leve rotación, como si fuera un recorte pegado a mano */
+  transform: rotate(-1.2deg);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: rotate(0deg);
+}
+
+.card-icon {
+  font-family: var(--font-display);
+  font-size: 60px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--text-primary);
+}
+
+.card-description {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}

@@ -1,0 +1,49 @@
+/* CSS LOCAL */
+
+.contacto {
+  background-color: var(--blue);
+  color: var(--ivory);
+}
+
+.contacto-container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 46px 36px;
+}
+
+.contacto-marca {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--ochre);
+  margin-bottom: 12px;
+}
+
+.contacto h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--ivory);
+  margin-bottom: 10px;
+}
+
+.contacto-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #B7C3CC;
+  max-width: none;
+  margin-bottom: 24px;
+}
+
+.contacto-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 760px) {
+  .contacto-links {
+    flex-direction: column;
+  }
+}
+
+/* ← .contacto-link y todo lo de abajo se fue a Link.css */
