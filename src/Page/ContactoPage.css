@@ -1,16 +1,37 @@
-/* CONTACTO PAGE */
+/* =========================================
+   CONTACTO PAGE
+   ========================================= */
 
-.contacto-page {
-  min-height: calc(100vh - 80px);
-
-  background-color: var(--ivory);
+.contacto-layout {
+  min-height: calc(100vh - 70px);
 
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: hidden;
 }
 
 
-/* Contenedor */
+.contacto-page {
+  flex: 1 1 auto;
+
+  width: 100%;
+  max-width: 100%;
+
+  min-width: 0;
+
+  background-color: var(--ivory);
+
+  display: block;
+}
+
+
+/* =========================================
+   CONTENEDOR
+   ========================================= */
 
 .contacto-page-container {
   width: 100%;
@@ -22,7 +43,9 @@
 }
 
 
-/* INTRODUCCIÓN */
+/* =========================================
+   INTRODUCCIÓN
+   ========================================= */
 
 .contacto-page-intro {
   width: 100%;
@@ -55,14 +78,14 @@
   margin: 0 0 16px;
 
   font-family: var(--font-display);
-  font-size: 1.5rem; /* = 24px */
+  font-size: 1.5rem;
 
   color: var(--ink);
 }
 
 .contacto-page-texto {
   width: 100%;
-  max-width: none; /* el texto ocupa todo el ancho */
+  max-width: none;
 
   margin: 0;
 
@@ -75,12 +98,19 @@
 }
 
 
-/* LINKS */
+/* =========================================
+   LINKS
+   ========================================= */
 
 .contacto-page-links {
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  /*
+    Escritorio:
+    4 tarjetas una al lado de la otra.
+  */
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 
   gap: 16px;
 
@@ -90,16 +120,21 @@
 }
 
 
-/* WRAPPER */
+/* =========================================
+   WRAPPER
+   ========================================= */
 
 .contacto-link-wrapper {
   position: relative;
 
   width: 100%;
+  min-width: 0;
 }
 
 
-/* ICONO */
+/* =========================================
+   ICONO
+   ========================================= */
 
 .contacto-link-icon {
   position: absolute;
@@ -131,10 +166,13 @@
 }
 
 
-/* CARD */
+/* =========================================
+   CARD
+   ========================================= */
 
 .contacto-link-wrapper .links-card {
   width: 100%;
+  min-width: 0;
 
   min-height: 135px;
 
@@ -153,10 +191,16 @@
 }
 
 
-/* TEXTO DE LA CARD */
+/* =========================================
+   TEXTO CARD
+   ========================================= */
 
 .contacto-link-wrapper .links-content {
+  width: 100%;
+
   text-align: center;
+
+  min-width: 0;
 }
 
 .contacto-link-wrapper .links-label {
@@ -168,7 +212,9 @@
 }
 
 
-/* HOVER */
+/* =========================================
+   HOVER
+   ========================================= */
 
 .contacto-link-wrapper:hover .links-card {
   transform: translateY(-3px);
@@ -183,17 +229,21 @@
 }
 
 
-/* TABLET */
+/* =========================================
+   TABLET
+   ========================================= */
 
 @media (max-width: 900px) {
 
   .contacto-page-links {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 
-/* CELULAR */
+/* =========================================
+   CELULAR
+   ========================================= */
 
 @media (max-width: 600px) {
 
@@ -203,6 +253,7 @@
 
   .contacto-page-links {
     grid-template-columns: 1fr;
+
     margin-top: 32px;
   }
 

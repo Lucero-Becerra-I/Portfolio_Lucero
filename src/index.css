@@ -10,6 +10,7 @@ section[id] {
 
 
 /* DESIGN TOKENS */
+
 :root {
   /* Colores base */
   --background: #FAF7F2;
@@ -46,63 +47,115 @@ section[id] {
 }
 
 
-/* RESET / GLOBAL */
+/* =========================================
+   RESET / GLOBAL
+   ========================================= */
 
 * {
   margin: 0;
   padding: 0;
+
   box-sizing: border-box;
 }
 
 
+/*
+  Asegura que la aplicación nunca
+  sea más ancha que la ventana.
+*/
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+
+  min-height: 100%;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================================
+   HTML
+   ========================================= */
+
 html {
   scroll-behavior: smooth;
+
   font-size: 18px;
 
-  /* Evita que el contenido cambie de ancho
-     cuando aparece/desaparece el scrollbar */
+  /*
+    Evita que el contenido cambie de ancho
+    cuando aparece/desaparece el scrollbar.
+  */
+
   scrollbar-gutter: stable;
 }
 
 
+/* =========================================
+   BODY
+   ========================================= */
+
 body {
   font-family: var(--font-body);
+
   background-color: var(--background);
+
   color: var(--text-primary);
+
   line-height: 1.5;
 }
 
+
+/* =========================================
+   TITULOS
+   ========================================= */
 
 h1,
 h2,
 h3 {
   font-family: var(--font-display);
+
   font-weight: 500;
 }
 
+
+/* =========================================
+   LINKS
+   ========================================= */
 
 a {
   color: inherit;
 }
 
 
-/* Foco visible por accesibilidad — no sacar */
+/* =========================================
+   FOCO VISIBLE
+   ========================================= */
+
+/* No sacar — accesibilidad */
 
 :focus-visible {
   outline: 2px solid var(--accent);
+
   outline-offset: 2px;
 }
 
 
-/* Respetar preferencia de movimiento reducido */
+/* =========================================
+   MOVIMIENTO REDUCIDO
+   ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+
     transition-duration: 0.01ms !important;
   }
 }
-
-

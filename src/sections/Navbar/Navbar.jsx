@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Navbar.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -12,8 +13,12 @@ function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const handleSectionClick = (e, section) => {
     e.preventDefault();
+
+    setMenuOpen(false);
 
     // Si estamos en la página principal,
     // vamos directamente a la sección.
@@ -40,6 +45,25 @@ function Navbar() {
     });
   };
 
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+
+    setMenuOpen(false);
+
+    if (location.pathname === "/") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      navigate("/");
+    }
+  };
+
+  const handleContactClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar" aria-label="Navegación principal">
       <div className="navbar-inner">
@@ -47,30 +71,44 @@ function Navbar() {
         <a
           href="/"
           className="navbar-logo"
-          onClick={(e) => {
-            e.preventDefault();
-
-            if (location.pathname === "/") {
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              });
-            } else {
-              navigate("/");
-            }
-          }}
+          onClick={handleLogoClick}
         >
           Lucero Becerra
         </a>
 
-        <ul className="navbar-links">
+        {/* Botón hamburguesa — solamente visible en celular */}
+        <button
+          className={`navbar-menu-button ${
+            menuOpen ? "is-open" : ""
+          }`}
+          type="button"
+          aria-label={
+            menuOpen
+              ? "Cerrar menú"
+              : "Abrir menú"
+          }
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
+        <ul
+          className={`navbar-links ${
+            menuOpen ? "is-open" : ""
+          }`}
+        >
           {navLinks.map((link) => (
             <li key={link.section}>
               <a
-                href="/"
+                href={`#${link.section}`}
                 onClick={(e) =>
-                  handleSectionClick(e, link.section)
+                  handleSectionClick(
+                    e,
+                    link.section
+                  )
                 }
               >
                 {link.label}
@@ -79,12 +117,15 @@ function Navbar() {
           ))}
 
           <li>
-            <Link to="/contacto">
+            <Link
+              to="/contacto"
+              onClick={handleContactClick}
+            >
               Contacto
             </Link>
           </li>
-
         </ul>
+
       </div>
     </nav>
   );

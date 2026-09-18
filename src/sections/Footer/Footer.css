@@ -1,18 +1,35 @@
+/* =========================================
+   FOOTER
+   ========================================= */
+
 .footer {
-  margin-top: 24px;
+  width: 100%;
+  max-width: 100%;
+
+  margin-top: 0;
 
   background-color: var(--ink);
   color: var(--ivory);
 }
 
+
+/* =========================================
+   CONTENEDOR
+   ========================================= */
+
 .footer-container {
+  width: 100%;
   max-width: var(--content-width);
+
   margin: 0 auto;
+
   padding: 58px 36px 22px;
 }
 
 
-/* Contenido principal */
+/* =========================================
+   CONTENIDO PRINCIPAL
+   ========================================= */
 
 .footer-main {
   text-align: center;
@@ -52,10 +69,13 @@
 }
 
 
-/* Redes */
+/* =========================================
+   REDES
+   ========================================= */
 
 .footer-social {
   display: flex;
+
   justify-content: center;
   align-items: center;
 
@@ -70,6 +90,7 @@
   gap: 7px;
 
   color: #DCE0E2;
+
   text-decoration: none;
 
   font-family: var(--font-body);
@@ -96,10 +117,13 @@
 }
 
 
-/* Separador */
+/* =========================================
+   FOOTER BOTTOM
+   ========================================= */
 
 .footer-bottom {
   display: flex;
+
   justify-content: space-between;
   align-items: center;
 
@@ -126,7 +150,40 @@
 }
 
 
-/* Responsive */
+/* =========================================
+   FOOTER MINIMAL
+   ========================================= */
+
+.footer-minimal {
+  width: 100%;
+  max-width: 100%;
+
+  margin-top: 0;
+}
+
+.footer-minimal .footer-container {
+  width: 100%;
+  max-width: var(--content-width);
+
+  padding: 16px 36px;
+}
+
+.footer-minimal .footer-bottom {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  border-top: none;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
 
 @media (max-width: 700px) {
 
@@ -148,9 +205,49 @@
   }
 
   .footer-bottom {
-    flex-direction: column;
+    flex-direction: row;
+
     align-items: flex-start;
 
+    gap: 20px;
+  }
+
+  .footer-copy,
+  .footer-text {
+    flex: 1;
+  }
+
+  .footer-text {
+    text-align: right;
+  }
+
+
+  /* Minimal */
+
+  .footer-minimal .footer-container {
+    padding: 16px 24px;
+  }
+}
+
+
+/* =========================================
+   CELULAR PEQUEÑO
+   ========================================= */
+
+@media (max-width: 500px) {
+
+  .footer-bottom {
+    flex-direction: column;
+
+    align-items: center;
+
     gap: 8px;
+  }
+
+  .footer-copy,
+  .footer-text {
+    flex: none;
+
+    text-align: center;
   }
 }
