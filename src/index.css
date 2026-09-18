@@ -1,15 +1,15 @@
 /* CSS GLOBAL */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap');
 
 
 /* Compensa la altura del navbar en todos los anchors */
 section[id] {
-  scroll-margin-top: 70px;  /* altura aproximada del Navbar */
+  scroll-margin-top: 70px;
 }
 
-/* DESIGN TOKENS — index.css */
+
+/* DESIGN TOKENS */
 :root {
   /* Colores base */
   --background: #FAF7F2;
@@ -20,7 +20,7 @@ section[id] {
   --accent: #B8813A;
   --accent-hover: #96692E;
 
-  /* Colores del Navbar (los traés desde Navbar.css) */
+  /* Colores del Navbar */
   --ivory: #F5F3EF;
   --ivory-tint: #E9EEF1;
   --ink: #25292C;
@@ -30,8 +30,8 @@ section[id] {
   --line: #DCE0E2;
 
   /* Tipografía */
-  --font-display: 'Spectral', serif;   /* ← elegís UNA fuente display */
-  --font-body: 'Work Sans', sans-serif; /* ← elegís UNA fuente body */
+  --font-display: 'Spectral', serif;
+  --font-body: 'Work Sans', sans-serif;
 
   /* Espaciado */
   --space-xs: 8px;
@@ -42,20 +42,28 @@ section[id] {
   --space-2xl: 100px;
 
   /* Layout */
-  --content-width: 1200px;  /* elegir UN ancho */
+  --content-width: 1200px;
 }
 
+
 /* RESET / GLOBAL */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
 html {
   scroll-behavior: smooth;
-  font-size: 18px; /* 1rem = 18px */
+  font-size: 18px;
+
+  /* Evita que el contenido cambie de ancho
+     cuando aparece/desaparece el scrollbar */
+  scrollbar-gutter: stable;
 }
+
 
 body {
   font-family: var(--font-body);
@@ -64,25 +72,37 @@ body {
   line-height: 1.5;
 }
 
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
   font-family: var(--font-display);
   font-weight: 500;
 }
+
 
 a {
   color: inherit;
 }
 
+
 /* Foco visible por accesibilidad — no sacar */
+
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
+
 /* Respetar preferencia de movimiento reducido */
+
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
 }
+
+

@@ -39,11 +39,9 @@
 
 .timeline-year {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 0.95rem;   /* ≈ 15px */
   color: var(--ink-soft);
-
-  text-align: center;
-  align-self: center;
+  padding-top: 2px;
 }
 
 .timeline-content h3 {

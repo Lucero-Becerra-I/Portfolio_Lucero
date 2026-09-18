@@ -1,5 +1,6 @@
-
 .footer {
+  margin-top: 24px;
+
   background-color: var(--ink);
   color: var(--ivory);
 }
