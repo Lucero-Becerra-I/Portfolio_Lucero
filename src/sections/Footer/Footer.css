@@ -156,29 +156,26 @@
 
 .footer-minimal {
   width: 100%;
-  max-width: 100%;
-
-  margin-top: 0;
+  margin: 0;
 }
 
 .footer-minimal .footer-container {
   width: 100%;
   max-width: var(--content-width);
-
+  margin: 0 auto;
   padding: 16px 36px;
 }
 
 .footer-minimal .footer-bottom {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
-
   margin: 0;
   padding: 0;
-
   border-top: none;
 }
+
+
 
 
 /* =========================================

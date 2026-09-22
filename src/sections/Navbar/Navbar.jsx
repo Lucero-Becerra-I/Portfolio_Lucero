@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Navbar.css";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
   { label: "Inicio", section: "inicio" },
@@ -11,18 +11,21 @@ const navLinks = [
 
 function Navbar() {
   const location = useLocation();
-  const navigate = useNavigate();
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleSectionClick = (e, section) => {
-    e.preventDefault();
-
+  const handleSectionClick = (section) => {
     setMenuOpen(false);
 
-    // Si estamos en la página principal,
-    // vamos directamente a la sección.
-    if (location.pathname === "/") {
+    // Si estamos en Contacto, primero volvemos al inicio
+    // y después React se encargará de llegar a la sección.
+    if (location.pathname !== "/") {
+      return;
+    }
+
+    // Esperamos un momento para que el cambio de hash
+    // quede registrado en la URL antes del scroll.
+    setTimeout(() => {
       const element = document.getElementById(section);
 
       if (element) {
@@ -31,36 +34,10 @@ function Navbar() {
           block: "start",
         });
       }
-
-      return;
-    }
-
-    // Si estamos en Contacto,
-    // volvemos a la página principal indicando
-    // qué sección queremos mostrar.
-    navigate("/", {
-      state: {
-        section,
-      },
-    });
+    }, 0);
   };
 
-  const handleLogoClick = (e) => {
-    e.preventDefault();
-
-    setMenuOpen(false);
-
-    if (location.pathname === "/") {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    } else {
-      navigate("/");
-    }
-  };
-
-  const handleContactClick = () => {
+  const handleLogoClick = () => {
     setMenuOpen(false);
   };
 
@@ -68,13 +45,13 @@ function Navbar() {
     <nav className="navbar" aria-label="Navegación principal">
       <div className="navbar-inner">
 
-        <a
-          href="/"
+        <Link
+          to="/#inicio"
           className="navbar-logo"
           onClick={handleLogoClick}
         >
           Lucero Becerra
-        </a>
+        </Link>
 
         {/* Botón hamburguesa — solamente visible en celular */}
         <button
@@ -103,12 +80,9 @@ function Navbar() {
           {navLinks.map((link) => (
             <li key={link.section}>
               <a
-                href={`#${link.section}`}
-                onClick={(e) =>
-                  handleSectionClick(
-                    e,
-                    link.section
-                  )
+                href={`/#${link.section}`}
+                onClick={() =>
+                  handleSectionClick(link.section)
                 }
               >
                 {link.label}
@@ -119,7 +93,7 @@ function Navbar() {
           <li>
             <Link
               to="/contacto"
-              onClick={handleContactClick}
+              onClick={() => setMenuOpen(false)}
             >
               Contacto
             </Link>

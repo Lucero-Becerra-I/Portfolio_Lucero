@@ -1,4 +1,5 @@
 import "./Trayectoria.css";
+import Reveal from "../../components/Reveal/Reveal";
 
 const trayectoriaData = [
   {
@@ -40,23 +41,25 @@ function Trayectoria() {
 
         <h2>Trayectoria</h2>
 
-        <div className="timeline">
-          {trayectoriaData.map((item) => (
-            <article className="timeline-item" key={item.id}>
+        <Reveal>
+          <div className="timeline">
+            {trayectoriaData.map((item) => (
+              <article className="timeline-item" key={item.id}>
 
-              <div className="timeline-year">
-                {item.year}
-              </div>
+                <div className="timeline-year">
+                  {item.year}
+                </div>
 
-              <div className="timeline-content">
-                <h3>{item.title}</h3>
+                <div className="timeline-content">
+                  <h3>{item.title}</h3>
 
-                <p>{item.description}</p>
-              </div>
+                  <p>{item.description}</p>
+                </div>
 
-            </article>
-          ))}
-        </div>
+              </article>
+            ))}
+          </div>
+        </Reveal>
 
       </div>
     </section>

@@ -1,5 +1,6 @@
 import "./ContactoPage.css";
 import Links from "../components/Links/Links";
+import Reveal from "../components/Reveal/Reveal";
 import Footer from "../sections/Footer/Footer";
 
 import {
@@ -48,50 +49,56 @@ function ContactoPage() {
 
         <div className="contacto-page-container">
 
-          <section className="contacto-page-intro">
+          <Reveal>
+            <section className="contacto-page-intro">
 
-            <span className="contacto-page-marca"></span>
+              <span className="contacto-page-marca"></span>
 
-            <p className="contacto-page-label">
-              CONTACTO
-            </p>
+              <p className="contacto-page-label">
+                CONTACTO
+              </p>
 
-            <h1 className="contacto-page-titulo">
-              ¿Hablamos?
-            </h1>
+              <h1 className="contacto-page-titulo">
+                ¿Hablamos?
+              </h1>
 
-            <p className="contacto-page-texto">
-              Si querés conocer más sobre lo que hago, conversar
-              sobre algún proyecto o simplemente ponerte en
-              contacto conmigo, me encantaría escucharte. Podés
-              encontrarme en cualquiera de estos medios.
-            </p>
+              <p className="contacto-page-texto">
+                Si querés conocer más sobre lo que hago, conversar
+                sobre algún proyecto o simplemente ponerte en
+                contacto conmigo, me encantaría escucharte. Podés
+                encontrarme en cualquiera de estos medios.
+              </p>
 
-          </section>
+            </section>
+          </Reveal>
 
           <section className="contacto-page-links">
 
-            {links.map((link) => {
+            {links.map((link, index) => {
               const Icon = link.icon;
 
               return (
-                <div
-                  className="contacto-link-wrapper"
+                <Reveal
                   key={link.id}
+                  delay={index * 80}
                 >
-                  <div className="contacto-link-icon">
-                    <Icon
-                      size={24}
-                      aria-hidden="true"
-                    />
-                  </div>
+                  <div className="contacto-link-wrapper">
 
-                  <Links
-                    href={link.href}
-                    label={link.label}
-                    description={link.description}
-                  />
-                </div>
+                    <div className="contacto-link-icon">
+                      <Icon
+                        size={24}
+                        aria-hidden="true"
+                      />
+                    </div>
+
+                    <Links
+                      href={link.href}
+                      label={link.label}
+                      description={link.description}
+                    />
+
+                  </div>
+                </Reveal>
               );
             })}
 

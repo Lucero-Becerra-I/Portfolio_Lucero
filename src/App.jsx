@@ -4,7 +4,6 @@ import {
   Routes,
   Route,
   useLocation,
-  useNavigate,
 } from "react-router-dom";
 
 import Navbar from "./sections/Navbar/Navbar";
@@ -16,82 +15,34 @@ import Footer from "./sections/Footer/Footer";
 
 import ContactoPage from "./Page/ContactoPage";
 
-
-function isPageReload() {
-  const navEntries = performance.getEntriesByType("navigation");
-
-  if (navEntries.length > 0) {
-    return navEntries[0].type === "reload";
-  }
-
-  return false;
-}
-
-
-// Guarda la posición de scroll de cada página
-// mientras el usuario navega.
-function ScrollManager() {
+function ScrollToSection() {
   const location = useLocation();
 
   useEffect(() => {
-    const key = `scrollY:${location.pathname}`;
+    if (!location.hash) {
+      return;
+    }
 
-    const handleScroll = () => {
-      sessionStorage.setItem(key, window.scrollY.toString());
-    };
+    const sectionId = location.hash.substring(1);
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    const timer = setTimeout(() => {
+      const element = document.getElementById(sectionId);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [location.pathname]);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 50);
+
+    return () => clearTimeout(timer);
+  }, [location.pathname, location.hash]);
 
   return null;
 }
 
-
 function HomePage() {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const section = location.state?.section;
-
-    // Si venimos desde Contacto, vamos a esa sección puntual.
-    if (section) {
-      const timer = setTimeout(() => {
-        const element = document.getElementById(section);
-
-        if (element) {
-          element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
-
-        navigate(location.pathname, { replace: true, state: {} });
-      }, 50);
-
-      return () => clearTimeout(timer);
-    }
-
-    // Si no venimos de Contacto y esto es un reload real,
-    // restauramos la posición guardada.
-    if (isPageReload()) {
-      const saved = sessionStorage.getItem(`scrollY:${location.pathname}`);
-
-      if (saved) {
-        const timer = setTimeout(() => {
-          window.scrollTo({
-            top: parseInt(saved, 10),
-            behavior: "auto",
-          });
-        }, 50);
-
-        return () => clearTimeout(timer);
-      }
-    }
-  }, [location, navigate]);
-
   return (
     <>
       <Hero />
@@ -103,11 +54,8 @@ function HomePage() {
   );
 }
 
-
 function App() {
   useEffect(() => {
-    // Apagamos la restauración automática del navegador:
-    // ahora la posición de scroll la controlamos nosotros.
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
@@ -115,12 +63,11 @@ function App() {
 
   return (
     <BrowserRouter>
-
       <Navbar />
-      <ScrollManager />
+
+      <ScrollToSection />
 
       <Routes>
-
         <Route
           path="/"
           element={<HomePage />}
@@ -130,9 +77,7 @@ function App() {
           path="/contacto"
           element={<ContactoPage />}
         />
-
       </Routes>
-
     </BrowserRouter>
   );
 }

@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import "./Reveal.css";
 
-function Reveal({ children }) {
+function Reveal({ children, delay = 0 }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
+
     if (!el) return;
 
     const observer = new IntersectionObserver(
@@ -25,7 +26,11 @@ function Reveal({ children }) {
   }, []);
 
   return (
-    <div className={`reveal ${visible ? "reveal-visible" : ""}`} ref={ref}>
+    <div
+      ref={ref}
+      className={`reveal ${visible ? "reveal-visible" : ""}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
       {children}
     </div>
   );

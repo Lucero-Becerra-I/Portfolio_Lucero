@@ -1,24 +1,31 @@
-/* CSS LOCAL */
-
 .conocimientos {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 40px 36px 64px;
+  padding: 40px 36px 100px;
 }
 
 .conocimientos-marca {
   display: inline-block;
+
   width: 20px;
   height: 2px;
+
   background-color: var(--ochre);
+
   margin-bottom: 12px;
 }
 
 .conocimientos h2 {
   font-family: var(--font-display);
-  font-size: 1.5rem; /* = 24px */
+  font-size: 1.5rem;
+
   color: var(--ink);
+
   margin-bottom: 24px;
+}
+
+.conocimientos-grupos {
+  width: 100%;
 }
 
 .skill-group {
@@ -31,20 +38,24 @@
 
 .skill-category {
   font-family: var(--font-body);
-  font-size: 0.95rem; /* ≈ 17px */
+  font-size: 0.95rem;
+
   color: var(--ink-soft);
+
   margin-bottom: 10px;
 }
 
 .skill-list {
   display: flex;
   flex-wrap: wrap;
+
   gap: 10px;
 }
 
 .skill-list span {
   font-family: var(--font-body);
-  font-size: 1rem; /* ≈ 16px */
+  font-size: 1rem;
+
   color: var(--ink);
 
   border: 1px solid var(--line);

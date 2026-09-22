@@ -47,9 +47,7 @@ section[id] {
 }
 
 
-/* =========================================
-   RESET / GLOBAL
-   ========================================= */
+/* RESET / GLOBAL */
 
 * {
   margin: 0;
@@ -57,7 +55,6 @@ section[id] {
 
   box-sizing: border-box;
 }
-
 
 /*
   Asegura que la aplicación nunca
@@ -77,27 +74,19 @@ body,
 }
 
 
-/* =========================================
-   HTML
-   ========================================= */
+/* HTML */
 
 html {
   scroll-behavior: smooth;
 
   font-size: 18px;
 
-  /*
-    Evita que el contenido cambie de ancho
-    cuando aparece/desaparece el scrollbar.
-  */
-
+  /* reserva el espacio de la scrollbar para que el ancho no salte entre páginas */
   scrollbar-gutter: stable;
 }
 
 
-/* =========================================
-   BODY
-   ========================================= */
+/* BODY */
 
 body {
   font-family: var(--font-body);
@@ -110,9 +99,7 @@ body {
 }
 
 
-/* =========================================
-   TITULOS
-   ========================================= */
+/* TITULOS */
 
 h1,
 h2,
@@ -123,21 +110,16 @@ h3 {
 }
 
 
-/* =========================================
-   LINKS
-   ========================================= */
+/* LINKS */
 
 a {
   color: inherit;
 }
 
 
-/* =========================================
-   FOCO VISIBLE
-   ========================================= */
+/* FOCO VISIBLE */
 
-/* No sacar — accesibilidad */
-
+/* no sacar — accesibilidad */
 :focus-visible {
   outline: 2px solid var(--accent);
 
@@ -145,9 +127,7 @@ a {
 }
 
 
-/* =========================================
-   MOVIMIENTO REDUCIDO
-   ========================================= */
+/* MOVIMIENTO REDUCIDO */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -159,3 +139,4 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
