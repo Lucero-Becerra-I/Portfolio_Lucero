@@ -8,8 +8,8 @@ function About() {
 
       <h2>Un poco más sobre mí</h2>
 
-      <Reveal>
-        <div className="about-text">
+      <div className="about-text">
+        <Reveal>
           <p>
             Estudio Ingeniería Informática y, en paralelo, sigo formándome
             de manera independiente a través de cursos y proyectos propios.
@@ -18,7 +18,9 @@ function About() {
             interesa, no suelo esperar a que me lo enseñen: investigo,
             experimento y busco llevarlo a la práctica.
           </p>
+        </Reveal>
 
+        <Reveal delay={80}>
           <p>
             También considero que equivocarse es una parte importante del
             aprendizaje, especialmente al enfrentarse a algo nuevo. Por eso,
@@ -27,8 +29,8 @@ function About() {
             Creo que esa forma de aprender me permite adquirir conocimientos
             de manera más profunda y, sobre todo, seguir mejorando constantemente.
           </p>
-        </div>
-      </Reveal>
+        </Reveal>
+      </div>
     </section>
   );
 }

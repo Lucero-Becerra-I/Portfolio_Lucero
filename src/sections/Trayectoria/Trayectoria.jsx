@@ -41,10 +41,10 @@ function Trayectoria() {
 
         <h2>Trayectoria</h2>
 
-        <Reveal>
-          <div className="timeline">
-            {trayectoriaData.map((item) => (
-              <article className="timeline-item" key={item.id}>
+        <div className="timeline">
+          {trayectoriaData.map((item, index) => (
+            <Reveal key={item.id} delay={Math.min(index * 80, 320)}>
+              <article className="timeline-item">
 
                 <div className="timeline-year">
                   {item.year}
@@ -57,9 +57,9 @@ function Trayectoria() {
                 </div>
 
               </article>
-            ))}
-          </div>
-        </Reveal>
+            </Reveal>
+          ))}
+        </div>
 
       </div>
     </section>

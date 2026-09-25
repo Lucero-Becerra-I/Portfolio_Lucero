@@ -1,6 +1,4 @@
-/* =========================================
-   CONTACTO PAGE
-   ========================================= */
+/* CONTACTO PAGE */
 
 .contacto-layout {
   min-height: calc(100vh - 70px);
@@ -29,9 +27,7 @@
 }
 
 
-/* =========================================
-   CONTENEDOR
-   ========================================= */
+/* CONTENEDOR */
 
 .contacto-page-container {
   width: 100%;
@@ -43,9 +39,7 @@
 }
 
 
-/* =========================================
-   INTRODUCCIÓN
-   ========================================= */
+/* INTRODUCCIÓN */
 
 .contacto-page-intro {
   width: 100%;
@@ -97,18 +91,14 @@
   color: #3A3D40;
 }
 
+.contacto-page-texto + .contacto-page-texto {
+  margin-top: 14px;
+}
 
-/* =========================================
-   LINKS
-   ========================================= */
+/* LINKS */
 
 .contacto-page-links {
   display: grid;
-
-  /*
-    Escritorio:
-    4 tarjetas una al lado de la otra.
-  */
 
   grid-template-columns: repeat(4, minmax(0, 1fr));
 
@@ -120,9 +110,7 @@
 }
 
 
-/* =========================================
-   WRAPPER
-   ========================================= */
+/* WRAPPER */
 
 .contacto-link-wrapper {
   position: relative;
@@ -132,14 +120,12 @@
 }
 
 
-/* =========================================
-   ICONO
-   ========================================= */
+/* ICONO */
 
 .contacto-link-icon {
   position: absolute;
 
-  top: 18px;
+  top: 22px;
   left: 50%;
 
   transform: translateX(-50%);
@@ -150,8 +136,8 @@
   align-items: center;
   justify-content: center;
 
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
 
   color: var(--ochre);
 
@@ -166,17 +152,15 @@
 }
 
 
-/* =========================================
-   CARD
-   ========================================= */
+/* CARD */
 
 .contacto-link-wrapper .links-card {
   width: 100%;
   min-width: 0;
 
-  min-height: 135px;
+  min-height: 145px;
 
-  padding: 58px 20px 20px;
+  padding: 70px 20px 22px;
 
   display: flex;
   align-items: center;
@@ -191,9 +175,7 @@
 }
 
 
-/* =========================================
-   TEXTO CARD
-   ========================================= */
+/* TEXTO CARD */
 
 .contacto-link-wrapper .links-content {
   width: 100%;
@@ -212,9 +194,7 @@
 }
 
 
-/* =========================================
-   HOVER
-   ========================================= */
+/* HOVER */
 
 .contacto-link-wrapper:hover .links-card {
   transform: translateY(-3px);
@@ -229,9 +209,7 @@
 }
 
 
-/* =========================================
-   TABLET
-   ========================================= */
+/* TABLET */
 
 @media (max-width: 900px) {
 
@@ -241,9 +219,7 @@
 }
 
 
-/* =========================================
-   CELULAR
-   ========================================= */
+/* CELULAR */
 
 @media (max-width: 600px) {
 

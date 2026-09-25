@@ -63,10 +63,17 @@ function ContactoPage() {
               </h1>
 
               <p className="contacto-page-texto">
-                Si querés conocer más sobre lo que hago, conversar
-                sobre algún proyecto o simplemente ponerte en
-                contacto conmigo, me encantaría escucharte. Podés
-                encontrarme en cualquiera de estos medios.
+                Si querés conocer más sobre lo que hago, tenés una idea en
+                mente o simplemente te gustaría ponerte en contacto conmigo,
+                me encantaría escucharte.
+              </p>
+
+              <p className="contacto-page-texto">
+                Estoy aprendiendo, creciendo y sumando experiencia con cada
+                proyecto. Me gusta involucrarme de verdad en lo que hago,
+                buscar soluciones y dar lo mejor de mí en cada desafío, sin
+                importar su tamaño. Podés encontrarme en cualquiera de estos
+                medios.
               </p>
 
             </section>
@@ -80,7 +87,7 @@ function ContactoPage() {
               return (
                 <Reveal
                   key={link.id}
-                  delay={index * 80}
+                  delay={Math.min(index * 80, 320)}
                 >
                   <div className="contacto-link-wrapper">
 

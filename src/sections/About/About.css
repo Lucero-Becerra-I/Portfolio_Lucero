@@ -21,15 +21,14 @@
   margin-bottom: 16px;
 }
 
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .about-text p {
   font-family: var(--font-body);
   font-size: 0.95rem; /* ≈ 17px */
   color: #3A3D40;
-  max-width: none; /* el texto ocupa todo el ancho */
-  margin-bottom: 12px;
-
-}
-
-.about-text p:last-child {
-  margin-bottom: 0;
 }

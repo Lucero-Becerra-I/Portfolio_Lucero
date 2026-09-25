@@ -36,12 +36,12 @@
   gap: 20px;
 
   padding: 14px 0;
-
-  border-top: 1px solid var(--line);
 }
 
-.timeline-item:first-child {
-  border-top: none;
+/* Le pone el borde a todos los ítems del timeline,
+   menos al primero (que no tiene un .reveal anterior) */
+.timeline > .reveal + .reveal > .timeline-item {
+  border-top: 1px solid var(--line);
 }
 
 .timeline-year {

@@ -41,27 +41,27 @@ function Conocimientos() {
 
         <h2>Conocimientos</h2>
 
-        <Reveal>
-          <div className="conocimientos-grupos">
-            {conocimientos.map((grupo) => (
-              <div className="skill-group" key={grupo.id}>
+        <div className="conocimientos-grupos">
+          {conocimientos.map((grupo, index) => (
+            <Reveal key={grupo.id} delay={Math.min(index * 80, 320)}>
+              <div className="skill-group">
 
                 <p className="skill-category">
                   {grupo.categoria}
                 </p>
 
                 <div className="skill-list">
-                  {grupo.habilidades.map((habilidad, index) => (
-                    <span key={index}>
+                  {grupo.habilidades.map((habilidad, i) => (
+                    <span key={i}>
                       {habilidad}
                     </span>
                   ))}
                 </div>
 
               </div>
-            ))}
-          </div>
-        </Reveal>
+            </Reveal>
+          ))}
+        </div>
 
       </div>
     </section>

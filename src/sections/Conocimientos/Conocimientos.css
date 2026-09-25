@@ -26,14 +26,11 @@
 
 .conocimientos-grupos {
   width: 100%;
-}
 
-.skill-group {
-  margin-bottom: 20px;
-}
+  display: flex;
+  flex-direction: column;
 
-.skill-group:last-child {
-  margin-bottom: 0;
+  gap: 20px;
 }
 
 .skill-category {
