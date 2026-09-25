@@ -13,30 +13,30 @@ import {
 const links = [
   {
     id: 1,
-    href: "https://mail.google.com/mail/?view=cm&to=email@gmail.com",
+    href: "https://mail.google.com/mail/?view=cm&to=lucero.becerraibarcena@gmail.com",
     label: "Gmail",
-    description: "email@gmail.com",
+    description: "lucero.becerraibarcena@gmail.com",
     icon: FaEnvelope,
   },
   {
     id: 2,
-    href: "https://linkedin.com/in/perfil",
+    href: "https://www.linkedin.com/in/lucero-becerra-ibarcena-92057b332",
     label: "LinkedIn",
-    description: "Perfil profesional",
+    description: "Lucero Becerra Ibarcena",
     icon: FaLinkedin,
   },
   {
     id: 3,
-    href: "https://github.com/usuario",
+    href: "https://github.com/Lucero-Becerra-I",
     label: "GitHub",
-    description: "Mis proyectos",
+    description: "Lucero-Becerra-I",
     icon: FaGithub,
   },
   {
     id: 4,
-    href: "https://instagram.com/usuario",
+    href: "https://www.instagram.com/lucero_b.i._/",
     label: "Instagram",
-    description: "@usuario",
+    description: "@lucero_b.i._",
     icon: FaInstagram,
   },
 ];

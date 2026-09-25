@@ -12,15 +12,15 @@ const redesSociales = [
   {
     id: "gmail",
     nombre: "Gmail",
-    href: "mailto:email@gmail.com",
+    href: "https://mail.google.com/mail/?view=cm&to=lucero.becerraibarcena@gmail.com",
     ariaLabel: "Gmail",
-    target: undefined,
+    target: "_blank",
     icono: FaEnvelope,
   },
   {
     id: "linkedin",
     nombre: "LinkedIn",
-    href: "https://linkedin.com/in/perfil",
+    href: "https://www.linkedin.com/in/lucero-becerra-ibarcena-92057b332",
     ariaLabel: "LinkedIn",
     target: "_blank",
     icono: FaLinkedin,
@@ -28,7 +28,7 @@ const redesSociales = [
   {
     id: "github",
     nombre: "GitHub",
-    href: "https://github.com/usuario",
+    href: "https://github.com/Lucero-Becerra-I",
     ariaLabel: "GitHub",
     target: "_blank",
     icono: FaGithub,
@@ -36,7 +36,7 @@ const redesSociales = [
   {
     id: "instagram",
     nombre: "Instagram",
-    href: "https://instagram.com/usuario",
+    href: "https://www.instagram.com/lucero_b.i._/",
     ariaLabel: "Instagram",
     target: "_blank",
     icono: FaInstagram,

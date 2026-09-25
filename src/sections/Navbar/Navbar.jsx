@@ -50,7 +50,7 @@ function Navbar() {
           className="navbar-logo"
           onClick={handleLogoClick}
         >
-          Lucero Becerra
+          Lucero Becerra Ibarcena
         </Link>
 
         {/* Botón hamburguesa — solamente visible en celular */}
